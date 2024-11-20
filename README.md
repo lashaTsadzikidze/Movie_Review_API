@@ -47,6 +47,6 @@ python manage.py runserver
 | Endpoints                 | Method   | Description                                                    |
 |:------------------------- |:-------- |:-------------------------------------------------------------- |
 | /api/movies/              | GET      | Retrieve all movies                                            |
-| /api/movies/<id>/         | GET      | Retrieve a specific movie by ID                                |
+| /api/movies/[id]/         | GET      | Retrieve a specific movie by ID                                |
 | /api/movies/              | POST     | Add a new movie (Only the admin has the permission to do this) |
-| /api/movies/<id>/reviews/ | POST     | Add a new Review for specific Moview by ID                     |
+| /api/movies/[id]/reviews/ | POST     | Add a new Review for specific Moview by ID                     |
