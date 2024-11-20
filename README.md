@@ -16,5 +16,11 @@ Welcome to the Movie Review API, a RESTful API that allows users to explore, cre
 
 ### Installation
 ```
-git clone https://github.com/lashaTsadzikidze/Movie_Review_API.git  
+git clone https://github.com/lashaTsadzikidze/Movie_Review_API.git
+cd Movie_Review_API
+```
+
+```
+python -m venv env  
+source env/bin/activate   # On Windows: env\Scripts\activate  
 ```
