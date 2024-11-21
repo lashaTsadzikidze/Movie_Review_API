@@ -86,7 +86,7 @@ This will output the token for the specified user.
 python manage.py runserver
 ```
 
-### API Endpoints
+## API Endpoints
 | Endpoints                            | Method   | Description                                                                                      |
 |:------------------------------------ |:-------- |:------------------------------------------------------------------------------------------------ |
 | /api/movies/                         | GET      | List all movies                                                                                  |
@@ -95,4 +95,49 @@ python manage.py runserver
 | /api/movies/[movie_id]/reviews/      | POST     | Add a new Review for specific Moview by ID (Only Authorized users have the permission to do this)|
 | /api/movies/[movie_id]/reviews/[id]/ | DELETE   | Delete a review (Only the admin has the permission to do this)                                   |
 
-Use Postman to send requests.
+## How to use
+### Add New Movie
+#### 1. Open Postman
+#### 2. Create a New Request
+- Click on New > Request > POST.
+- Set the URL. Use your endpoint.
+  ```
+  http://127.0.0.1:8000/api/movies/
+  ```
+- Set the Headers In the "Headers" tab, add the following:
+  Key: `Content-Type`
+  Value: `application/json`
+
+  (Authorization as superuser)
+  Key: 'Authorization'
+  Value: 'Token <superuser token>'
+- Go to the "Body" tab, check "raw" and set the data to json format. For example:
+  ```
+  {
+    "id": 1,
+    "title": "Title 1",
+    "genre": "Genre 1",
+    "description": "Description 1",
+    "release_date": "2024-11-21"
+  }
+  ```
+- Click the send button.
+
+### Get a list of movies
+- Change "POST" to "GET"
+- Click the Send button
+- Or open the Following link in browser: 'http://127.0.0.1:8000/api/movies/'
+
+### Add a new Review for specific Moview by ID
+- Change "GET" to "POST"
+- Set the URL.
+  'http://127.0.0.1:8000/api/movies/1/reviews/'
+- In "Headers" tab value of "Authorization" Replace with the token of the user you want to write a review with.
+- Go to the "Body" tab, check "raw" and set the data to json format. For example:
+  ```
+  {
+    "rating": 10,
+    "comment": "Random Comment."
+  }
+  ```
+- Click the Send button.
