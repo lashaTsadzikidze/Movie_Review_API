@@ -92,7 +92,7 @@ python manage.py runserver
 | /api/movies/                         | GET      | List all movies                                                                                  |
 | /api/movies/[id]/                    | GET      | Retrieve a specific movie by ID                                                                  |
 | /api/movies/                         | POST     | Add a new movie (Only the admin has the permission to do this)                                   |
-| /api/movies/[movie_id]/reviews/      | POST     | Add a new Review for specific Moview by ID (Only Authorized users have the permission to do this)|
+| /api/movies/[movie_id]/reviews/      | POST     | Add a new Review for specific Movie by ID (Only Authorized users have the permission to do this)|
 | /api/movies/[movie_id]/reviews/[id]/ | DELETE   | Delete a review (Only the admin has the permission to do this)                                   |
 
 ## How to use
@@ -104,13 +104,13 @@ python manage.py runserver
   ```
   http://127.0.0.1:8000/api/movies/
   ```
-- Set the Headers In the "Headers" tab, add the following:
-  Key: `Content-Type`
+- Set the Headers In the "Headers" tab, add the following:\
+  Key: `Content-Type`\
   Value: `application/json`
 
-  (Authorization as superuser)
-  Key: 'Authorization'
-  Value: 'Token <superuser token>'
+  (Authorization as superuser)\
+  Key: `Authorization`\
+  Value: `Token <superuser token>`
 - Go to the "Body" tab, check "raw" and set the data to json format. For example:
   ```
   {
@@ -126,12 +126,11 @@ python manage.py runserver
 ### Get a list of movies
 - Change "POST" to "GET"
 - Click the Send button
-- Or open the Following link in browser: 'http://127.0.0.1:8000/api/movies/'
+- Or open the Following link in browser: `http://127.0.0.1:8000/api/movies/`
 
-### Add a new Review for specific Moview by ID
+### Add a new Review for specific Movie by ID
 - Change "GET" to "POST"
-- Set the URL.
-  'http://127.0.0.1:8000/api/movies/1/reviews/'
+- Set the URL. `http://127.0.0.1:8000/api/movies/1/reviews/`
 - In "Headers" tab value of "Authorization" Replace with the token of the user you want to write a review with.
 - Go to the "Body" tab, check "raw" and set the data to json format. For example:
   ```
