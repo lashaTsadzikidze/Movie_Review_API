@@ -75,16 +75,24 @@ Exit the shell:
 ```
 exit()
 ```
+### 7. Generate Tokens for Existing Users
+```
+python manage.py drf_create_token <username>
+```
+This will output the token for the specified user.
 
-### 7. Run the development server:
+### 8. Run the development server:
 ```
 python manage.py runserver
 ```
 
 ### API Endpoints
-| Endpoints                 | Method   | Description                                                    |
-|:------------------------- |:-------- |:-------------------------------------------------------------- |
-| /api/movies/              | GET      | Retrieve all movies                                            |
-| /api/movies/[id]/         | GET      | Retrieve a specific movie by ID                                |
-| /api/movies/              | POST     | Add a new movie (Only the admin has the permission to do this) |
-| /api/movies/[id]/reviews/ | POST     | Add a new Review for specific Moview by ID                     |
+| Endpoints                            | Method   | Description                                                                                      |
+|:------------------------------------ |:-------- |:------------------------------------------------------------------------------------------------ |
+| /api/movies/                         | GET      | List all movies                                                                                  |
+| /api/movies/[id]/                    | GET      | Retrieve a specific movie by ID                                                                  |
+| /api/movies/                         | POST     | Add a new movie (Only the admin has the permission to do this)                                   |
+| /api/movies/[movie_id]/reviews/      | POST     | Add a new Review for specific Moview by ID (Only Authorized users have the permission to do this)|
+| /api/movies/[movie_id]/reviews/[id]/ | DELETE   | Delete a review (Only the admin has the permission to do this)                                   |
+
+Use Postman to send requests.
