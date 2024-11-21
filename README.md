@@ -54,7 +54,29 @@ Password (again): ********
 Superuser created successfully.
 ```
 
-### 6. Run the development server:
+### 6. Create simple user
+Open the Django shell
+```
+python manage.py shell
+```
+Import the `User` model
+```
+from django.contrib.auth.models import User
+```
+Create the user with `create_user`:
+```
+user = User.objects.create_user(
+    username='simpleuser',  # Replace with desired username
+    password='securepassword123',  # Replace with a secure password
+    email='simpleuser@example.com'  # Optional email field
+)
+```
+Exit the shell:
+```
+exit()
+```
+
+### 7. Run the development server:
 ```
 python manage.py runserver
 ```
